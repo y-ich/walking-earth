@@ -3,7 +3,7 @@
    - License: MIT
    - Coypright (C) 2012 ICHIKAWA, Yuji (New 3 Rs)
  -->
- 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,7 +43,6 @@ so, I use compiled javascript.
     </script>
 </head>
 <body>
-<body>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -60,13 +59,13 @@ so, I use compiled javascript.
   <g:plusone></g:plusone>
 </div>
   <h1>Walking around the earth</h1>
-  <h2>使い方</h2>
+  <h2>Usage</h2>
   <ol>
-    <li>歩きたい町名を入れてください。Enterで地図が移動します。</li>
-    <li>地図上でスタート地点とゴール地点をクリックしてください。奇数回目のクリックがスタート、偶数回目のクリックがゴールです。何度でもやり直せます。</li>
-    <li>経路ボタンをクリックしてください。経路とストリートビューの有無を調べてから、Google earth上でストリートビューツアが始まります。</li>
+    <li>Input a name of place where you want to walk around and type enter key. You will go there on the map.</li>
+    <li>Click starting point and ending point on the map. Odd-numbered click makes starting point and even-numbered click makes ending point. You can try to click repeatedly.</li>
+    <li>Click the route button. The route and corresponding street view would be checked, then street view tour would start on Google earth plugin.</li>
   </ol>
-  <label for="address">住所など: </label><input id="address" type="text" name="address" size="20"></input>
+  <label for="address">address etc.: </label><input id="address" type="text" name="address" size="20"></input>
   <table>
     <tr>
       <td>
@@ -76,13 +75,14 @@ so, I use compiled javascript.
       </td>
     </tr>
   </table>
-  <label for="origin">スタート: </label><input id="origin" type="text" name="origin" size="80"></input><span>(注)ここに手入力しても無効です。</span>
+  <label for="origin">starting point: </label><input id="origin" type="text" name="origin" size="80"></input><span>(*) There are no effect inputing anything here.</span>
   <br>
-  <label for="destination">ゴール: </label><input id="destination" type="text" name="alternative" size="80"></input><span>(注)ここに手入力しても無効です。</span>
+  <label for="destination">ending point: </label><input id="destination" type="text" name="alternative" size="80"></input><span>(*) There are no effect inputing anything here.</span>
   <br>
-  <label for="origin">スピード: </label><input id="speed" type="text" name="speed" size="4" value="4"></input><span>km/h</span>
+  <label for="origin">speed: </label><input id="speed" type="text" name="speed" size="4" value="4"></input><span>km/h</span>
   <br>
-  <input type="button" id="route" value="経路"></input><span id="progress" style="font-family: monospace;"></span>
+  <input type="button" id="route" value="Route"></input><span id="progress" style="font-family: monospace;"></span>
+  <p>Tour KML data will appear in the text area below. You can use it for your original KML files.</p>
   <div><textarea id="kml"></textarea></div>
 <!-- <script type="text/coffeescript" src="path.coffee"></script> -->
 </body>
