@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf8">
+<title>Walking around the earth</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<style type="text/css">
+  html { height: 100% }
+  body { height: 100%; margin: 0px; padding: 0px }
+  #map_canvas {width: 600px; height: 400px; }
+</style>
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="https://www.google.com/jsapi?key=AIzaSyDWQZZU9JI6jDKUjVIab6ZTC02O6HOOBSk"></script>
+<script src="http://coffeescript.org/extras/coffee-script.js"></script>
+<script type="text/javascript">
+  google.load('earth', '1.x');
+</script>
+<script src="http://cdn.jqmobi.com/jq.mobi.min.js"></script>
+<!--
+1. Two google earth panes were created when executing last path.coffee.
+2. window.onload in coffeescript in head was not effected.
+so, I use compiled javascript.
+-->
+<script src="walking-earth.min.js"></script>
+<!-- <script src="http://coffeescript.org/extras/coffee-script.js"></script> -->
+</head>
+<body>
+  <h1>Walking around the earth</h1>
+  <h2>使い方</h2>
+  <ol>
+    <li>歩きたい町名を入れてください。Enterで地図が移動します。</li>
+    <li>地図上でスタート地点とゴール地点をクリックしてください。奇数回目のクリックがスタート、偶数回目のクリックがゴールです。何度でもやり直せます。</li>
+    <li>経路ボタンをクリックしてください。経路とストリートビューの有無を調べてから、Google earth上でストリートビューツアが始まります。</li>
+  </ol>
+  <label for="address">住所など: </label><input id="address" type="text" name="address" size="20"></input>
+  <table>
+    <tr>
+      <td>
+        <div id="map_canvas"></div>
+      </td><td>
+        <div id="map3d" style="height: 400px; width: 600px;"></div>
+      </td>
+    </tr>
+  </table>
+  <label for="origin">スタート: </label><input id="origin" type="text" name="origin" size="80"></input><span>(注)ここに手入力しても無効です。</span>
+  <br>
+  <label for="destination">ゴール: </label><input id="destination" type="text" name="alternative" size="80"></input><span>(注)ここに手入力しても無効です。</span>
+  <br>
+  <label for="origin">スピード: </label><input id="speed" type="text" name="speed" size="4" value="4"></input><span>km/h</span>
+  <br>
+  <input type="button" id="route" value="経路"></input><span id="progress" style="font-family: monospace;"></span>
+  <div><textarea id="kml"></textarea></div>
+<!-- <script type="text/coffeescript" src="path.coffee"></script> -->
+</body>
+</html>
+<!-- Location: Scenes which you watched
+   - author: ICHIKAWA, Yuji
+   -
+ -->
