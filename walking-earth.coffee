@@ -54,7 +54,7 @@ getStreetViewPath = (path, callback) ->
                                 path : result
                                 strokeColor : 'red'
                     else
-                        console.log "getPanoramaByLocation: " + status
+                        alert "getPanoramaByLocation: " + status
             )(i)
 
     repeatLatLng(0)
